@@ -13,6 +13,7 @@ ul.menu {
 ul.menu li {
   padding: 20px;
   border-radius: 10px;
+  transition: all ease-out 300ms;
 }
 
 ul.menu li.active {
@@ -41,6 +42,7 @@ ul.menu li a {
   background: transparent;
   height: 28px;
   border-radius: 5px;
+  transition: all ease-out 300ms;
 }
 
 .search input[type="text"]:focus-visible {
@@ -64,7 +66,77 @@ ul.menu li a {
 }
 
 @media screen and (max-width: 1200px) {
+  .mainmenu {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .search {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    background: var(--dark-gray);
+    border-radius: 0 10px 10px 0;
+    gap: 5px;
+  }
+  .search input[type="text"] {
+    width: 0;
+  }
+  .search.open {
+    box-shadow: -10px 0 10px rgba(0,0,0,0.4);
+  }
+  .search.open input[type="text"] {
+    width: auto;
+  }
 }
 
+
 @media screen and (max-width: 900px) {
+ .mainmenu {
+  position: fixed;
+  justify-content: flex-end;
+  flex-direction: column-reverse;
+  top: 0;
+  height: 100%;
+  gap: 20px;
+  left: 100%;
+  transition: all ease-out 500ms;
+  border-radius: 0;
+  padding: 25px 15px;
+ }
+ .mainmenu.open {
+  transform: translateX(-100%);
+ }
+ ul.menu {
+  flex-direction: column;
+  gap: 25px;
+}
+
+ul.menu li {
+  padding: 5px 20px;
+  border-radius: 10px;
+  font-weight: 300;
+  transition: all ease-out 300ms;
+}
+
+ul.menu li.active {
+  background: var(--green);
+}
+
+ul.menu li:hover {
+  background: var(--menu-hover);
+}
+
+ul.menu li a {
+  color: #fff;
+  text-decoration: none;
+}
+.search {
+  height: auto;
+  position: relative;
+}
+.search input[type="text"] {
+  width: auto;
+}
 }

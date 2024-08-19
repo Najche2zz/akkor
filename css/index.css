@@ -9,6 +9,8 @@
 @import url(./news/news.css);
 @import url(./news/people.css);
 @import url(./news/banners.css);
+@import url(./news/events.css);
+@import url(./news/partners.css);
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
 
 html, body {

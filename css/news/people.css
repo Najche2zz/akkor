@@ -65,17 +65,3 @@
     border-radius: 10px;
     overflow: hidden;
 }
-
-
-.events {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.events-list {
-    display: flex;
-    flex-direction: column;
-}
-
-.event {}
