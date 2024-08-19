@@ -1,54 +1,67 @@
 section.info {
-    flex: 1 0 270px;
-    max-width: 270px;
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
+  flex: 1 0 270px;
+  max-width: 270px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
 }
 
 section.sitemap {
-    flex:1 0 270px;
-    max-width: 270px;
-    gap: 25px;
-    display: flex;
-    flex-direction: column;
+  flex: 1 0 270px;
+  max-width: 270px;
+  gap: 25px;
+  display: flex;
+  flex-direction: column;
 }
 
 .sitemap .map {
-    display: flex;
-    flex-direction: column;
-    gap:10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .map a {
-    color: var(--text-color);
-    text-decoration: none;
+  color: var(--text-color);
+  text-decoration: none;
 }
 
 .map a:hover {
-    color: var(--text-color);
-    text-decoration: underline;
+  color: var(--text-color);
+  text-decoration: underline;
 }
 
 section.categories {
-    flex:1 0 270px;
-    max-width: 270px;
-    gap: 25px;
-    display: flex;
-    flex-direction: column;
+  flex: 1 0 270px;
+  max-width: 270px;
+  gap: 25px;
+  display: flex;
+  flex-direction: column;
 }
 
 .info h3 {
-    font-size: 13px;
-    text-transform: uppercase;
-    color: var(--header-text-color);
+  font-size: 13px;
+  text-transform: uppercase;
+  color: var(--header-text-color);
 }
 
 .categories .tags {
-    flex-wrap: wrap;
-    gap: 15px;
+  flex-wrap: wrap;
+  gap: 15px;
 }
 
 @media screen and (max-width: 900px) {
+  section.info {
+    flex: auto;
+    max-width: none;
+  }
 
+  section.sitemap {
+    flex: auto;
+    max-width: none;
+  }
+
+  section.categories {
+    flex: auto;
+    max-width: none;
+  }
 }

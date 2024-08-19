@@ -1,44 +1,50 @@
 .headbar {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 42px;
-    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.15);
-    width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 42px;
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.15);
+  width: 100%;
 }
 
 .headbar .wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    max-width: 1170px;
-    width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1170px;
+  width: 100%;
 }
 
 .date {
-    font-size: 12px;
-    display: flex;
-    gap: 15px;
-    align-items: center;
-    justify-content: center;
+  font-size: 12px;
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  justify-content: center;
 }
 .date::before {
-    content: '';
-    display: block;
-    width: 14px;
-    height: 14px;
-    background: url(../../img/date.svg) no-repeat center;
-    background-size: contain;
+  content: "";
+  display: block;
+  width: 14px;
+  height: 14px;
+  background: url(../../img/date.svg) no-repeat center;
+  background-size: contain;
 }
 
 .socials {
-    display: flex;
-    gap: 14px;
+  display: flex;
+  gap: 14px;
 }
 
 @media screen and (max-width: 1200px) {
-    .headbar {
-        width: auto;
-        padding: 0 20px;
-    }
+  .headbar {
+    width: auto;
+    padding: 0 20px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .headbar {
+    display: none;
+  }
 }
