@@ -1,0 +1,32 @@
+version: "3.1"
+
+services:
+  drupal:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 3000:80
+    volumes:
+      - ./http:/var/www/html/
+
+  mysql74.1gb.ru:
+    image: mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: RoiNext
+      MYSQL_DATABASE: gb_x_akkor
+      MYSQL_USER: gb_x_akkor
+      MYSQL_PASSWORD: cf1064c30op
+    ports:
+      - 3308:3306
+    volumes:
+      - ./mysqlDB:/var/lib/mysql
+
+  phpmyadmin:
+    image: phpmyadmin
+    restart: always
+    ports:
+      - 8181:80
+    environment:
+      - PMA_ARBITRARY=1
