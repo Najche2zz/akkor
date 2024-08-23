@@ -1,0 +1,45 @@
+section.page {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 0 150px;
+}
+
+.page-content {
+  font-weight: 300;
+}
+
+.page-list {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.page-item {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.pi-img {
+  flex: none;
+  width: 278px;
+  height: 176px;
+  background: var(--img-bg);
+  overflow: hidden;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+.pi-text {
+}
+
+@media screen and (max-width: 900px) {
+  section.page {
+    gap: 20px;
+    padding: 0;
+  }
+}
