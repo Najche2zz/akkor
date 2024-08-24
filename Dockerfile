@@ -6,7 +6,7 @@ RUN apt-get update && apt-get install -y \
     libjpeg62-turbo-dev \
     libpng-dev \
     && docker-php-ext-install -j$(nproc) gd
-
+    
 RUN docker-php-ext-install pdo_mysql
 
 RUN a2enmod rewrite

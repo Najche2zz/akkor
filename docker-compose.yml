@@ -11,7 +11,7 @@ services:
       - ./http:/var/www/html/
 
   mysql74.1gb.ru:
-    image: mysql
+    image: mysql:8
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: RoiNext
@@ -22,7 +22,7 @@ services:
       - 3308:3306
     volumes:
       - ./mysqlDB:/var/lib/mysql
-      - ./home:/var/games
+      - ./home:/etc/mysql/conf.d
 
   phpmyadmin:
     image: phpmyadmin
