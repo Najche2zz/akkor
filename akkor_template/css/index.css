@@ -1,0 +1,145 @@
+@import url(./reset.css);
+@import url(./colors.css);
+@import url(./cmponents/socials.css);
+@import url(./cmponents/rubric.css);
+@import url(./header/index.css);
+@import url(./footer/footer.css);
+@import url(./cmponents/tags.css);
+@import url(./news/main-news.css);
+@import url(./news/news.css);
+@import url(./news/people.css);
+@import url(./news/banners.css);
+@import url(./news/events.css);
+@import url(./news/partners.css);
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap");
+
+html,
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  gap: 40px;
+  min-height: 100vh;
+  color: var(--text-color);
+  background-color: var(--bg-color);
+  font-family: "Oswald", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+header {
+  width: 100%;
+  max-width: 1170px;
+}
+
+main {
+  flex: 1;
+  width: 100%;
+  max-width: 1170px;
+  display: flex;
+  gap: 78px;
+}
+
+section.left {
+  flex: 7;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+section.right {
+  flex: 5;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+section.bottom {
+  width: 100%;
+  max-width: 1170px;
+}
+
+footer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 45px 0 80px 0;
+  background-color: var(--footer-color);
+}
+
+footer .wrapper {
+  width: 100%;
+  flex: 1;
+  display: flex;
+  max-width: 1170px;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+@media screen and (max-width: 1200px) {
+  html,
+  body {
+    align-items: stretch;
+  }
+
+  header {
+    width: auto;
+    padding: 0 20px;
+  }
+
+  main {
+    width: auto;
+    gap: 40px;
+    padding: 0 20px;
+  }
+
+  section.left {
+    flex: 7;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  section.right {
+    flex: 5;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  section.bottom {
+    width: auto;
+    padding: 0 20px;
+  }
+
+  footer {
+    width: 100%;
+    align-items: stretch;
+  }
+
+  footer .wrapper {
+    padding: 0 20px;
+    width: auto;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  main {
+    flex-direction: column;
+    margin-top: 120px;
+  }
+  header {
+    padding: 0;
+    position: fixed;
+    width: 100%;
+    z-index: 555;
+  }
+  footer .wrapper {
+    flex-direction: column;
+    gap: 26px;
+    align-items: stretch;
+  }
+}

@@ -9,6 +9,7 @@ services:
       - 3000:80
     volumes:
       - ./http:/var/www/html/
+      - ./akkor_template:/var/www/html/sites/all/themes/akkornew
 
   mysql74.1gb.ru:
     image: mysql:8
@@ -21,7 +22,7 @@ services:
     ports:
       - 3308:3306
     volumes:
-      - ./mysqlDB:/var/lib/mysql
+      - ./mysql-dump:/var/lib/mysql
       - ./home:/etc/mysql/conf.d
 
   phpmyadmin:

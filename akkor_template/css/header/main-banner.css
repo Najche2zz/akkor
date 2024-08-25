@@ -1,0 +1,37 @@
+.main-banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 0 0 35px 0;
+}
+
+#logo,
+.logo {
+  display: block;
+  width: 144px;
+  height: 75px;
+  background: url(../../img/logo.png) no-repeat center;
+  background-size: contain;
+}
+
+.main-banner h1 {
+  font-size: 13px;
+  text-transform: uppercase;
+  color: var(--header-text-color);
+}
+
+@media screen and (max-width: 900px) {
+  .main-banner {
+    background: var(--dark-gray);
+    padding: 0;
+    height: 90px;
+    justify-content: space-between;
+  }
+  .main-banner h1 {
+    display: none;
+  }
+  #logo {
+    height: 60px;
+  }
+}
