@@ -15,6 +15,11 @@
   width: 100%;
 }
 
+.headbar-right {
+  display: flex;
+  gap: 20px;
+}
+
 .date {
   font-size: 12px;
   display: flex;
@@ -34,6 +39,24 @@
 .socials {
   display: flex;
   gap: 14px;
+}
+
+.enter-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.enter-links a {
+  font-size: 12px;
+  text-decoration: none;
+  color: var(--light-text-color);
+}
+
+.enter-links a:hover {
+  font-size: 12px;
+  text-decoration: underline;
+  color: var(--header-text-color);
 }
 
 @media screen and (max-width: 1200px) {
