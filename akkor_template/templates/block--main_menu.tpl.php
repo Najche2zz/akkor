@@ -1,4 +1,5 @@
-<ul class="menu"> 
+<ul class="menu">
+   <?php print $content ?>]
    <li class="active"><a href="#">Главая</a></li>
    <li><a href="#">О нас</a></li>
    <li><a href="#">Новости</a></li>

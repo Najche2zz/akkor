@@ -31,5 +31,17 @@ function akkornew_preprocess_region(&$variables) {
 
 function akkornew_menu_tree__main_menu(&$vars) {
     // To add CSS class to the main menu ul 
-    return '<ul class="nav navbar-nav">' . $vars['tree'] . '</ul>'; 
+    return '<ul class="mainmenu">' . $vars['tree'] . '</ul>'; 
+}
+
+
+function akkornew_menu_link(array $variables) {
+    $element = $variables['element'];
+    $sub_menu = '';
+  
+    if ($element['#below']) {
+      $sub_menu = drupal_render($element['#below']);
+    }
+    $output = l($element['#title'], $element['#href'], $element['#localized_options']);
+    return '<li' . drupal_attributes($element['#attributes']) . '>' . $output . $sub_menu . "</li>\n";
 }
