@@ -11,7 +11,7 @@ services:
       - ./http:/var/www/html/
 
   mysql74.1gb.ru:
-    image: mysql:8
+    image: mysql:8.0
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: RoiNext
