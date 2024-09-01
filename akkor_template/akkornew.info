@@ -1,0 +1,38 @@
+name = АККОР new template from Roinext
+description = Новая тема Аккор.
+core = 7.x
+;base theme = bootstrap
+
+
+;;;;;;;;;;;;;;;;;;;;;
+;; Regions
+;;;;;;;;;;;;;;;;;;;;;
+
+regions[main_menu]          = 'Навигация'
+regions[socials]            = 'Ссылки соцсетей'
+regions[search]             = 'Поиск'
+regions[header]             = 'Шапка'
+regions[body]               = 'Основной контент'
+regions[left_body]          = 'Левая колонка'
+regions[right_body]         = 'Правая колонка'
+regions[ads]                = 'Реклама внизу'
+regions[bottom]             = 'Первая колонка'
+regions[content]            = 'Контент'
+regions[footer]             = 'Футер'
+regions[enter]              = 'Вход'
+regions[sitemap]              = 'Карта сайта'
+
+
+;;;;;;;;;;;;;;;;;;;;;
+;; Stylesheets
+;;;;;;;;;;;;;;;;;;;;;
+
+stylesheets[all][] = css/index.css
+stylesheets[all][] = css/page.css
+
+; ;;;;;;;;;;;;;;;;;;;;;
+; ;; Scripts
+; ;;;;;;;;;;;;;;;;;;;;;
+; 
+scripts[menu] = 'js/mainmenu.js'
+scripts[slider] = 'js/slider.js'
