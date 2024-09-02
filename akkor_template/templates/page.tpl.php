@@ -34,14 +34,14 @@
       <div class="headbar-right">
          <div class="socials">
             <?php print render($page['socials']); ?>
-            <?php print render($page['enter']); ?>
          </div>
-
+         
          <div class="enter-links">
             <?php if (!empty($logged_in)): ?>
                <a class="btn btn-xs btn-danger" href="/user/logout">Выход</a>
-            <?php else: ?>
-               <a class="btn btn-xs btn-default" href="/user">Вход</a>
+               <?php else: ?>
+                  <a class="btn btn-xs btn-default" href="/user">Вход</a>
+                  <?php print render($page['enter']); ?>
             <?php endif; ?>
          </div>
       </div>
