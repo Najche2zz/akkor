@@ -8,12 +8,12 @@ services:
     ports:
       - 3000:80
     volumes:
-      - ./siteDump:/var/www/html/
-      # - ./http:/var/www/html/
+      # - ./siteDump:/var/www/html/
+      - ./http:/var/www/html/
       - ./akkor_template:/var/www/html/sites/all/themes/akkornew
 
   mysql74.1gb.ru:
-    image: mysql:8
+    image: mysql:8.0
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: RoiNext
