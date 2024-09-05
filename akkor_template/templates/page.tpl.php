@@ -76,13 +76,14 @@
          <div class="logo"></div>
          <div class="close"></div>
       </div>
+
       <?php print render($page['main_menu']); ?>
 
       <?php print render($page['search']); ?>
    </div>
 </header>
 
-<?php print render($page['body']); ?>
+<?php print render($page['content']); ?>
 
 <main>
    <section class="left">

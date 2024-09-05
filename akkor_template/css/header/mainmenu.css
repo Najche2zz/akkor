@@ -75,7 +75,7 @@ ul.menu li a {
   outline-offset: none !important;
 }
 
-.search button.find {
+.search button.find, .search input[type=submit] {
   background: transparent url(../../img/search.svg) no-repeat center;
   width: 32px;
   height: 32px;
