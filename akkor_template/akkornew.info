@@ -33,5 +33,5 @@ stylesheets[all][] = css/page.css
 ; ;; Scripts
 ; ;;;;;;;;;;;;;;;;;;;;;
 ; 
-scripts[menu] = 'js/mainmenu.js'
+; scripts[menu] = 'js/mainmenu.js'
 scripts[slider] = 'js/slider.js'

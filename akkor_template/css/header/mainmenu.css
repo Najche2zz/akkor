@@ -23,8 +23,8 @@ ul.menu {
 }
 
 ul.menu li {
+  position: relative;
   margin: 0;
-  padding: 20px;
   border-radius: 10px;
   transition: all ease-out 300ms;
   -webkit-border-radius: 10px;
@@ -46,8 +46,49 @@ ul.menu li:hover {
 }
 
 ul.menu li a {
+  display: block;
+  padding: 20px;
   color: #fff;
   text-decoration: none;
+}
+
+.submenu {
+  display: none;
+  position: absolute;
+  top:100%;
+  left:0;
+  background: var(--dark-gray);
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+.submenu.show {
+  display: block;
+}
+
+.submenu ul.menu {
+  flex-direction: column;
+}
+
+.submenu ul.menu li {
+  position: relative;
+  text-wrap: nowrap;
+  margin: 0;
+  border-radius: 10px;
+  transition: all ease-out 300ms;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  -webkit-transition: all ease-out 300ms;
+  -moz-transition: all ease-out 300ms;
+  -ms-transition: all ease-out 300ms;
+  -o-transition: all ease-out 300ms;
+}
+
+.submenu ul.menu li a {
+  display: block;
+  padding: 10px 20px;
+  width: 100%;
 }
 
 .search {
@@ -76,7 +117,7 @@ ul.menu li a {
 }
 
 .search button.find, .search input[type=submit] {
-  background: transparent url(../../img/search.svg) no-repeat center;
+  background: transparent url(../../../img/search.svg) no-repeat center;
   width: 32px;
   height: 32px;
   border-radius: 5px;
