@@ -43,8 +43,9 @@ function akkornew_menu_link(&$variables) {
         $sub_menu = drupal_render($element['#below']);
         $sub_menu = '<div class="submenu">' . $sub_menu . '</div>';
     }
-    $output = l($element['#title'], $element['#href'], $element['#localized_options']);
-    if ($element['#href'] == '<front>' ||  $element['#href'] == $_GET['q']) {$current = 'class="active"';}
+    if ($sub_menu) $output = '<span>'.$element['#title'].'</span>';
+    else $output = l($element['#title'], $element['#href'], $element['#localized_options']);
+    if ($element['#href'] == $_GET['q'] || $element['#href'] == '<front>' && $_GET['q'] == '<front>') {$current = 'class="active"';}
     else $current = '';
     return '<li '.$current.'>' . $output . $sub_menu ."</li>\n";
 }

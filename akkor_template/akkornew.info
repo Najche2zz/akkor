@@ -10,16 +10,13 @@ engine = phptemplate
 
 regions[main_menu]          = 'Навигация'
 regions[search]             = 'Поиск'
-regions[header]             = 'Шапка'
 regions[body]               = 'Основной контент'
 regions[left_body]          = 'Левая колонка'
 regions[right_body]         = 'Правая колонка'
 regions[ads]                = 'Реклама внизу'
-regions[bottom]             = 'Первая колонка'
+regions[bottom]             = 'Нижний блок'
 regions[content]            = 'Контент'
 regions[footer]             = 'Футер'
-regions[enter]              = 'Вход'
-regions[sitemap]            = 'Карта сайта'
 
 ;;;;;;;;;;;;;;;;;;;;;
 ;; Stylesheets

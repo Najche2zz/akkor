@@ -39,7 +39,7 @@
                     <div class="news-date"><?php print format_date($node->created, 'short'); ?></div>
                     <h3>
                         <a href="<?php print drupal_get_path_alias('node/' . $node->nid); ?>">
-                            <?php print $node->title;?>
+                            <?php print akkor_truncate(strip_tags($node->title), 60);?>
                         </a>
                     </h3>
                 </div>

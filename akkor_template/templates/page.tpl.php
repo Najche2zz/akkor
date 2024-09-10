@@ -163,7 +163,9 @@
 <main>
 
    <?php if (!$is_front): ?>
-      <?php print render($page['content']); ?>
+      <section class="page">
+         <?php print render($page['content']); ?>
+      </section>
    <?php else: ?>
    
    <section class="left">
@@ -231,9 +233,27 @@
    <?php endif; ?>
 </main>
 
-<?php print render($page['ads']); ?>
 
-<?php print render($page['bottom']); ?>
+<section class="bottom">
+   <div class="ads">
+      <?php print render($page['ads']); ?>
+   </div>
+</section>
+
+<section class="bottom">
+         <div class="rubric center"><h3>Партнеры</h3></div>
+         <div class="partners">
+            <div class="partners-wrapper">
+               <div class="partner"></div>
+               <div class="partner"></div>
+               <div class="partner"></div>
+               <div class="partner"></div>
+               <div class="partner"></div>
+            </div>
+         </div>
+         <script src="./js/slider.js"></script>
+         <script></script>
+</section>
 
 <footer>
    <div class="wrapper">

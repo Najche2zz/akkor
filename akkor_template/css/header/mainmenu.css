@@ -45,18 +45,20 @@ ul.menu li:hover {
   background: var(--menu-hover);
 }
 
-ul.menu li a {
+ul.menu li a,
+ul.menu li span {
   display: block;
   padding: 20px;
   color: #fff;
   text-decoration: none;
+  cursor: pointer;
 }
 
 .submenu {
   display: none;
   position: absolute;
-  top:100%;
-  left:0;
+  top: 100%;
+  left: 0;
   background: var(--dark-gray);
   border-radius: 10px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
@@ -116,7 +118,8 @@ ul.menu li a {
   outline-offset: none !important;
 }
 
-.search button.find, .search input[type=submit] {
+.search button.find,
+.search input[type="submit"] {
   background: transparent url(../../../img/search.svg) no-repeat center;
   width: 32px;
   height: 32px;

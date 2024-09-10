@@ -35,6 +35,14 @@
   font-size: 22px;
 }
 
+.first-text h2 a {
+  color: var(--text-color);
+}
+.first-text h2 a:hover {
+  color: var(--header-text-color);
+  text-decoration: none;
+}
+
 .news-date {
   font-size: 10px;
   font-weight: 300;
@@ -72,6 +80,14 @@
 
 .main-text h3 {
   font-size: 18px;
+}
+
+.main-text h3 a {
+  color: var(--text-color);
+}
+.main-text h3 a:hover {
+  color: var(--header-text-color);
+  text-decoration: none;
 }
 
 @media screen and (max-width: 900px) {

@@ -7,6 +7,13 @@ section.page {
 
 .page-content {
   font-weight: 300;
+  font-family: "Oswald", sans-serif !important;
+}
+
+.page-content p {
+  font-family: "Oswald", sans-serif !important;
+  margin-bottom: 20px;
+  text-indent: 10px;
 }
 
 .page-list {

@@ -82,5 +82,36 @@
 ?>
 <!-- Node Output -->
 <?php
-    print render($content);
+    // print render($content);
+    // print_r($node);
 ?>
+
+<?php print $type;?>
+
+<?php if ($type == 'article'):?>
+<div class="tags">
+    <div class="tag">Политика</div>
+</div>
+<?php endif; ?>
+
+<h1>
+    <?php print $node->title;?>
+</h1>
+
+<?php if ($type == 'article'):?>
+<div class="tags">
+    <div class="news-date"><?php print format_date($node->created, 'short'); ?></div>
+</div>
+<?php endif; ?>
+
+<?php if ($type == 'article'):?>
+    <div class="page-content">
+        <?php print $node->body['und'][0]['value']; ?>
+    </div>
+<?php endif; ?>
+
+<?php if ($type == 'page'):?>
+    <div class="page-content">
+        <?php print render($content); ?>
+    </div>
+<?php endif; ?>
