@@ -1,63 +1,63 @@
 .soc {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 26px;
-    height: 26px;
-    border-radius: 13px;
-    background-color: var(--green);
-    cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 13px;
+  background-color: var(--green);
+  cursor: pointer;
 }
 
 .soc.big {
-    width: 40px;
-    height: 40px;
-    border-radius: 20px;
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
 }
 
 .soc.vk::before {
-    content: '';
-    background: url(../../img/vk.svg) no-repeat center;
-    background-size: contain;
-    width: 16px;
-    height: 16px;
+  content: "";
+  background: url(../../../img/vk.svg) no-repeat center;
+  background-size: contain;
+  width: 16px;
+  height: 16px;
 }
 .soc.ok::before {
-    content: '';
-    background: url(../../img/ok.svg) no-repeat center;
-    background-size: contain;
-    width: 16px;
-    height: 16px;
+  content: "";
+  background: url(../../../img/ok.svg) no-repeat center;
+  background-size: contain;
+  width: 16px;
+  height: 16px;
 }
 .soc.tg::before {
-    content: '';
-    background: url(../../img/tg.svg) no-repeat center;
-    background-size: contain;
-    width: 16px;
-    height: 16px;
-    transform: translateX(-1px);
+  content: "";
+  background: url(../../../img/tg.svg) no-repeat center;
+  background-size: contain;
+  width: 16px;
+  height: 16px;
+  transform: translateX(-1px);
 }
 .soc.zen::before {
-    content: '';
-    background: url(../../img/zen.svg) no-repeat center;
-    background-size: contain;
-    width: 16px;
-    height: 16px;
+  content: "";
+  background: url(../../../img/zen.svg) no-repeat center;
+  background-size: contain;
+  width: 16px;
+  height: 16px;
 }
 .soc.big.vk::before {
-    width: 24px;
-    height: 24px;
+  width: 24px;
+  height: 24px;
 }
 .soc.big.ok::before {
-    width: 24px;
-    height: 24px;
+  width: 24px;
+  height: 24px;
 }
 .soc.big.tg::before {
-    width: 24px;
-    height: 24px;
-    transform: translateX(-2px);
+  width: 24px;
+  height: 24px;
+  transform: translateX(-2px);
 }
 .soc.big.zen::before {
-    width: 24px;
-    height: 24px;
+  width: 24px;
+  height: 24px;
 }

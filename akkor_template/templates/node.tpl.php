@@ -80,6 +80,7 @@
  * @ingroup themeable
  */
 ?>
+<!-- Node Output -->
 <?php
     print render($content);
 ?>

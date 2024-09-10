@@ -1,67 +1,70 @@
 .first {
-    display: flex;
-    flex-direction: column;
-    gap:15px;
-    background-color: var(--green-transparent);
-    border: 1px solid var(--green);
-    border-radius: 10px;
-    padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  background-color: var(--green-transparent);
+  border: 1px solid var(--green);
+  border-radius: 10px;
+  padding: 10px;
 }
 
-.first-header, .people-header {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap:20px;
+.first-header,
+.people-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
 }
 
 .f-img {
-    flex: none;
-    width: 120px;
-    height: 120px;
-    background-color: var(--img-bg);
-    border-radius: 10px;
-    overflow: hidden;
+  flex: none;
+  width: 120px;
+  height: 120px;
+  background-color: var(--img-bg);
+  border-radius: 10px;
+  overflow: hidden;
 }
 
-.first-title, .people-title {
-    display: flex;
-    flex-direction: column;
-    font-size: 22px;
-    font-weight: 500;
-    align-items: center;
-    gap:5px;
+.first-title,
+.people-title {
+  display: flex;
+  flex-direction: column;
+  font-size: 22px;
+  font-weight: 500;
+  align-items: center;
+  gap: 5px;
 }
 
-.first-title span, .people-title span {
-    font-size: 16px;
-    font-weight: 400;
-    color: var(--light-text-color);
+.first-title span,
+.people-title span {
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--light-text-color);
 }
 
 .people {
-    display: flex;
-    flex-direction: column;
-    gap:15px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 
 .people-list {
-    display: flex;
-    flex-direction: column;
-    gap:24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
 }
 
 .people-item {
-    display: flex;
-    flex-direction: column;
-    gap:15px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 
 .people-img {
-    flex: none;
-    width: 100px;
-    height: 100px;
-    background-color: var(--img-bg);
-    border-radius: 10px;
-    overflow: hidden;
+  flex: none;
+  width: 100px;
+  height: 100px;
+  background-color: var(--img-bg);
+  border-radius: 10px;
+  overflow: hidden;
 }
