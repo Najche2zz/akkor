@@ -27,12 +27,12 @@
 
         <div class="main-list">
 
-        <?php $i = 0; foreach ($nodes as $node): if ($i > 3) { break; } ?>
+        <?php $i = 0; foreach ($nodes as $node): $i++; if ($i > 4) { break; } ?>
 
             <div class="main-item">
                 <div class="main-img">
-                    <a href="<?php print drupal_get_path_alias('node/' . $node->nid); ?>">
-                        <img src="<?php print image_style_url('thumbnail', $node->field_image['und'][0]['uri']); ?>" alt="" class="img-responsive" title="<?php print $node->title;?>">
+                    <a href="<?php print drupal_get_path_alias('node/' . $node->nid); ?>" style="background-image: url(<?php print image_style_url('thumbnail', $node->field_image['und'][0]['uri']); ?>);">
+                        <!-- <img src="<?php print image_style_url('thumbnail', $node->field_image['und'][0]['uri']); ?>" alt="" class="img-responsive" title="<?php print $node->title;?>"> -->
                     </a>
                 </div>
                 <div class="main-text">
@@ -45,7 +45,7 @@
                 </div>
             </div>
         
-        <?php $i++; endforeach; ?>
+        <?php endforeach; ?>
 
         </div>
     </div>
@@ -55,7 +55,7 @@
     <div class="rubric"><h3>Новости</h3></div>
     <div class="list">
 
-    <?php $i = 0; foreach ($nodes as $node): if ($i > 4) { break; } ?>
+    <?php $i = 0; foreach ($nodes as $node): $i++; if ($i < 5) { continue; } ?>
 
         <div class="item">
             <div class="news-date"><?php print format_date($node->created, 'short'); ?></div>
@@ -69,7 +69,7 @@
             </div>
         </div>
 
-    <?php $i++; endforeach; ?>
+    <?php endforeach; ?>
 
     </div>
 </div>

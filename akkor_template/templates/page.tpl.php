@@ -219,15 +219,6 @@
 
    <section class="right">
       <?php print render($page['right_body']); ?>
-
-      <div class="events">
-         <div class="rubric"><h4>Материалы мероприятий</h4></div>
-         <div class="events-list">
-            <a href="#" class="event" style="height: 150px"></a>
-            <a href="#" class="event" style="height: 200px"></a>
-            <a href="#" class="event" style="height: 250px"></a>
-         </div>
-      </div>
    </section>
 
    <?php endif; ?>

@@ -77,6 +77,7 @@ function akkornew_form_alter(&$form, &$form_state, $form_id) {
     }
 }
 
+
 function akkor_truncate($string, $length = 80, $etc = '...', $break_words = false, $middle = false) {
     if ($length == 0) {
         return '';
@@ -101,6 +102,34 @@ function akkor_truncate($string, $length = 80, $etc = '...', $break_words = fals
         return $string;
     }
 }
+
+function akkor_preprocess_simpleads_img_element(&$vars) {
+  $link_attributes = array();
+  $image_attributes = array();
+  $vars = _simpleads_theme_attributes_init($vars);
+  _simpleads_increase_impression($vars['ad']['node']);
+  // Image attributes
+  $image_attributes['path'] = $vars['ad']['image_uri'];
+  $image_attributes['alt'] = check_plain($vars['ad']['alt']);
+  if (isset($vars['settings']['ads_width']) && is_numeric($vars['settings']['ads_width'])) {
+    $image_attributes['width'] = check_plain($vars['settings']['ads_width']);
+  }
+  if (isset($vars['settings']['ads_height']) && is_numeric($vars['settings']['ads_height'])) {
+    $image_attributes['height'] = check_plain($vars['settings']['ads_height']);
+  }
+
+  // Link attributes
+  $link_attributes['html'] = TRUE;
+  if ($vars['ad']['target'] && !user_access('administer nodes')) {
+    $link_attributes['attributes']['target'] = '_blank';
+  }
+
+  $image_attributes['attributes']['class'][] = 'img-thumbnail';
+
+  $vars['link_attributes'] = $link_attributes;
+  $vars['image_attributes'] = $image_attributes;
+}
+
 
 /*
 function m_akkor_theme() {
