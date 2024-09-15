@@ -31,7 +31,7 @@
 
             <div class="main-item">
                 <div class="main-img">
-                    <a href="<?php print drupal_get_path_alias('node/' . $node->nid); ?>" style="background-image: url(<?php print image_style_url('thumbnail', $node->field_image['und'][0]['uri']); ?>);">
+                    <a href="<?php print drupal_get_path_alias('node/' . $node->nid); ?>" style="background-image: url(<?php print image_style_url('medium', $node->field_image['und'][0]['uri']); ?>);">
                     </a>
                 </div>
                 <div class="main-text">

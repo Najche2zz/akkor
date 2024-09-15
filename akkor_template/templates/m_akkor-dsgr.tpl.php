@@ -4,7 +4,7 @@
 
     <?php 
         foreach ($nodes as $node): 
-        $img = image_style_url('thumbnail', $node->field_image['und'][0]['uri']);
+        $img = image_style_url('medium', $node->field_image['und'][0]['uri']);
     ?>
         <div class="dsg-item">
             <?php if ($img) : ?>
