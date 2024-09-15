@@ -2,9 +2,10 @@
 @import url(./colors.css);
 @import url(./cmponents/socials.css);
 @import url(./cmponents/rubric.css);
+@import url(./cmponents/ads.css);
+@import url(./cmponents/tags.css);
 @import url(./header/index.css);
 @import url(./footer/footer.css);
-@import url(./cmponents/tags.css);
 @import url(./news/main-news.css);
 @import url(./news/news.css);
 @import url(./news/people.css);
@@ -88,9 +89,16 @@ footer .wrapper {
   align-items: flex-start;
 }
 
-.img-thumbnail {
+.banner-img {
   min-width: 100%;
   height: auto;
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+
+dd {
+  margin-bottom: 20px;
 }
 
 @media screen and (max-width: 1200px) {

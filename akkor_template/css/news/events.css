@@ -1,23 +1,39 @@
-
 .events {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 
 .events-list {
-    display: flex;
-    flex-direction: column;
-    gap: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
 }
 
 .event {
-    border-radius: 10px;
-    overflow: hidden;
-    background-color: var(--img-bg);
-    transition: all ease-out 300ms;
+  display: block;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: var(--img-bg);
+  transition: all ease-out 300ms;
+  -webkit-transition: all ease-out 300ms;
+  -moz-transition: all ease-out 300ms;
+  -ms-transition: all ease-out 300ms;
+  -o-transition: all ease-out 300ms;
+}
+
+.event img {
+  transition: all ease-out 300ms;
+  -webkit-transition: all ease-out 300ms;
+  -moz-transition: all ease-out 300ms;
+  -ms-transition: all ease-out 300ms;
+  -o-transition: all ease-out 300ms;
 }
 
 .event:hover {
-    background-color: var(--img-bg-hover);
+  background-color: var(--img-bg-hover);
+}
+
+.event:hover img {
+  opacity: 0.7;
 }

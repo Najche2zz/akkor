@@ -1,0 +1,83 @@
+.ads {
+  position: relative;
+  display: flex;
+  margin: 30px 0;
+}
+
+.ads-wrapper {
+  border: 1px solid var(--green);
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  margin: auto;
+  left: 50%;
+  overflow: hidden;
+  border-radius: 10px;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+.ads-wrapper::before {
+  position: absolute;
+  content: "";
+  display: block;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 250px;
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0));
+  z-index: 1;
+}
+.ads-wrapper::after {
+  position: absolute;
+  content: "";
+  display: block;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 250px;
+  background: linear-gradient(-90deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0));
+  z-index: 1;
+}
+
+.ads-wrapper .event,
+.ad {
+  float: left;
+  background-color: transparent;
+  width: auto;
+  transition: all ease-out 300ms;
+  margin: 20px;
+  border-radius: 5px;
+  -webkit-transition: all ease-out 300ms;
+  -moz-transition: all ease-out 300ms;
+  -ms-transition: all ease-out 300ms;
+  -o-transition: all ease-out 300ms;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+.ads-wrapper .event img {
+  height: 120px;
+  width: auto;
+  transition: all ease-out 300ms;
+  -webkit-transition: all ease-out 300ms;
+  -moz-transition: all ease-out 300ms;
+  -ms-transition: all ease-out 300ms;
+  -o-transition: all ease-out 300ms;
+}
+
+.ads-wrapper .event:hover {
+  background-color: var(--img-bg-hover);
+}
+
+.ads-wrapper .event:hover img {
+  opacity: 0.7;
+}

@@ -86,22 +86,38 @@
     // print_r($node);
 ?>
 
-<?php print $type;?>
+<?php //print $type;?>
 
 <?php if ($type == 'article'):?>
-<div class="tags">
-    <div class="tag">Политика</div>
-</div>
+    <div class="tags">
+        <?php
+            $tax = $node->field_categories['und'];
+            
+            $vocabulary = taxonomy_vocabulary_machine_name_load('category');
+            $terms = taxonomy_get_tree($vocabulary->vid);
+
+            foreach ($tax as $term) { //прогоняем все термины которые есть в ноде
+                foreach ($terms as $tm) {
+                    if ($tm->tid == $term['tid']) {
+                        print '<div class="tag">'.$tm->name.'</div>';
+                    } 
+                }
+            }
+
+        ?>
+    </div>
 <?php endif; ?>
 
-<h1>
-    <?php print $node->title;?>
-</h1>
+<?php if ($type != 'commentator'):?>
+    <h1>
+        <?php print $node->title;?>
+    </h1>
+<?php endif; ?>
 
 <?php if ($type == 'article'):?>
-<div class="tags">
-    <div class="news-date"><?php print format_date($node->created, 'short'); ?></div>
-</div>
+    <div class="tags">
+        <div class="news-date"><?php print format_date($node->created, 'short'); ?></div>
+    </div>
 <?php endif; ?>
 
 <?php if ($type == 'article'):?>
@@ -115,3 +131,56 @@
         <?php print render($content); ?>
     </div>
 <?php endif; ?>
+
+<?php if ($type == 'commentator'):?>
+    <div class="page-content">
+        <div class="commentator">
+            <?php 
+            $options = array(
+                'type' => 'image',
+                'settings' => array(
+                    'image_style' => 'medium',
+                    'image_link' => 'content', // content, file
+                )
+            );
+            $images = field_get_items('node', $node, 'field_image');
+            $img = field_view_value('node', $node, 'field_image', $images[0], $options);
+            ?>
+            <div class="com-img">
+                <?php print render($img);?>
+            </div>
+            <div class="com-body">
+                <div class="com-title">
+                    <h1><?php print $node->title;?></h1>
+                    <h2><?php print $node->field_status['und'][0]['value']; ?></h2>
+                </div>
+                <?php print $node->body['und'][0]['value']; ?>
+            </div>
+        </div>
+    </div>
+<?php endif; ?>
+
+<?php if ($type == 'commentary'):?>
+    <div class="page-content">
+        <div class="commentator">
+            <?php 
+            $options = array(
+                'type' => 'image',
+                'settings' => array(
+                    'image_style' => 'medium',
+                    'image_link' => 'content', // content, file
+                )
+            );
+            $images = field_get_items('node', $node, 'field_image');
+            $img = field_view_value('node', $node, 'field_image', $images[0], $options);
+            ?>
+            <div class="com-img">
+                <?php print render($img);?>
+            </div>
+            <div class="com-body">
+                <?php print $node->body['und'][0]['value']; ?>
+            </div>
+        </div>
+    </div>
+<?php endif; ?>
+<!-- End Node output -->

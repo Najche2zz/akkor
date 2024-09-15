@@ -43,8 +43,12 @@ function akkornew_menu_link(&$variables) {
         $sub_menu = drupal_render($element['#below']);
         $sub_menu = '<div class="submenu">' . $sub_menu . '</div>';
     }
-    if ($sub_menu) $output = '<span>'.$element['#title'].'</span>';
-    else $output = l($element['#title'], $element['#href'], $element['#localized_options']);
+    if ($sub_menu) {
+      $output = '<span>'.$element['#title'].'</span>';
+    }
+    else {
+      $output = l($element['#title'], $element['#href'], $element['#localized_options']);
+    }
     if ($element['#href'] == $_GET['q'] || $element['#href'] == '<front>' && $_GET['q'] == '<front>') {$current = 'class="active"';}
     else $current = '';
     return '<li '.$current.'>' . $output . $sub_menu ."</li>\n";
@@ -56,13 +60,12 @@ function akkornew_preprocess_search_block_form(&$variables) {
 
 
 function akkornew_form_alter(&$form, &$form_state, $form_id) {
-    // print_r($form);
     if ($form_id == 'search_block_form') {
         $form['search_block_form']['#title'] = t('Search'); // Меняем текст заголовка
         $form['search_block_form']['#title_display'] = 'invisible'; // Выключаем отображение заголовка
         $form['search_block_form']['#size'] = 20;  // Задаем размер поля ввода
         // $form['actions']['submit']['#value'] = t('GO!'); // Меняем текст кнопки поиска
-        $form['search_block_form']['#class'] = '';  // CSS-class текстового поля
+        $form['search_block_form']['#class'] = 'test';  // CSS-class текстового поля
         // $form['actions']['submit'] = array('#type' => 'image_button', '#src' => base_path() . path_to_theme() .'/images/searchbutton.png'); // Путь к картинке кнопки, если мы хотим заменить текст на картинку
             
         $searchtext = 'Search'; // Задаем текст внутри поля. Здесь я использую английское значение, его можно легко перевести в админке. Можно писать и по-русски. Помещаем его в переменную, чтобы было удобно с ним работать
@@ -78,7 +81,7 @@ function akkornew_form_alter(&$form, &$form_state, $form_id) {
 }
 
 
-function akkor_truncate($string, $length = 80, $etc = '...', $break_words = false, $middle = false) {
+function akkornew_truncate($string, $length = 80, $etc = '...', $break_words = false, $middle = false) {
     if ($length == 0) {
         return '';
     }
@@ -103,7 +106,52 @@ function akkor_truncate($string, $length = 80, $etc = '...', $break_words = fals
     }
 }
 
-function akkor_preprocess_simpleads_img_element(&$vars) {
+function akkornew_preprocess_field(&$variables) {
+  $element = $variables['element'];
+  $view_mode = $element['#view_mode'];
+  $field_type = $element['#field_type'];
+  $field_name = $element['#field_name'];
+  $items = $variables['items'];
+
+  if ($field_type == 'image') {
+    if ($field_name == 'field_image') {
+      switch ($view_mode) {
+        case 'teaser':
+          foreach ($items as $delta => $item) {
+            $item['#item']['attributes']['class'][] = 'img-thumbnail img-responsive';
+            $items[$delta] = $item;
+          }
+          $variables['classes_array'][] = 'pull-left';
+          break;
+        case 'full':
+          foreach ($items as $delta => $item) {
+            $item['#item']['attributes']['class'][] = 'img-thumbnail img-responsive';
+            $items[$delta] = $item;
+          }
+          break;
+      }
+    }
+    if ($field_name == 'field_ad_image') {
+          foreach ($items as $delta => $item) {
+            $item['#item']['attributes']['class'][] = 'img-thumbnail img-responsive';
+            $items[$delta] = $item;
+          }
+    }
+  }
+
+  $variables['items'] = $items;
+}
+
+function akkornew_preprocess_region(&$vars) {
+}
+
+function akkornew_preprocess_block(&$vars) {
+}
+
+function akkornew_preprocess_simpleads_block(&$vars) {
+}
+
+function akkornew_preprocess_simpleads_img_element(&$vars) {
   $link_attributes = array();
   $image_attributes = array();
   $vars = _simpleads_theme_attributes_init($vars);
@@ -120,11 +168,12 @@ function akkor_preprocess_simpleads_img_element(&$vars) {
 
   // Link attributes
   $link_attributes['html'] = TRUE;
+  $link_attributes['attributes']['class'][] = 'event';
   if ($vars['ad']['target'] && !user_access('administer nodes')) {
     $link_attributes['attributes']['target'] = '_blank';
   }
 
-  $image_attributes['attributes']['class'][] = 'img-thumbnail';
+  $image_attributes['attributes']['class'][] = 'banner-img';
 
   $vars['link_attributes'] = $link_attributes;
   $vars['image_attributes'] = $image_attributes;

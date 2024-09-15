@@ -30,7 +30,7 @@ foreach ($nodes as $node):
             </div>
         </div>
         <div class="people-text">
-            <p><?php print akkor_truncate(strip_tags($node->body['und'][0]['safe_value']), 300); ?></p>
+            <p><?php print akkornew_truncate(strip_tags($node->body['und'][0]['safe_value']), 300); ?></p>
             <p><a href="<?php print drupal_get_path_alias('node/' . $node->nid); ?>">Читать далее...</a></p>
         </div>
     </div>

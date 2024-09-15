@@ -12,10 +12,11 @@
  *
  */
 ?>
-<div class="simplead-container image-ad <?php if (isset($css_attributes)): print $css_attributes; endif; ?>">
+  <!-- Simple ADS block -->
   <?php if (!empty($ad['destination_url'])) : ?>
-    <?php print l(theme('image', $image_attributes), $ad['url'], $link_attributes); ?>
+    <?php 
+      print l(theme('image', $image_attributes), $ad['url'], $link_attributes); 
+    ?>
   <?php else : ?>
-    <?php print theme('image', $image_attributes); ?>
+    <?php print '<div class="event">'.theme('image', $image_attributes).'</div>'; ?>
   <?php endif; ?>
-</div>
