@@ -1,5 +1,7 @@
 :root {
   --dark-gray: #393939;
+  --light-gray: #f5f5f5;
+  --green-light: #8baf6c;
   --green: #6d8c54;
   --green-hover: #30a242;
   --green-transparent: rgba(109, 140, 84, 0.2);

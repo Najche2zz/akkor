@@ -106,7 +106,7 @@
 
 @media screen and (max-width: 900px) {
   .first-img {
-    height: 200px;
+    /* height: 200px; */
   }
   .main-list {
     display: grid;

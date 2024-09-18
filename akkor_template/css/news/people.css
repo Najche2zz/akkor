@@ -32,10 +32,10 @@
 .first-title,
 .people-title {
   display: flex;
+  align-items: flex-start;
   flex-direction: column;
   font-size: 22px;
   font-weight: 500;
-  align-items: center;
   gap: 5px;
 }
 

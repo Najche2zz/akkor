@@ -1,9 +1,9 @@
 .main-banner {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 10px;
-  padding: 0 0 35px 0;
+  padding: 0 0 22px 0;
 }
 
 #logo,
@@ -16,20 +16,25 @@
 }
 
 .main-banner h1 {
-  font-size: 13px;
+  font-size: 26px;
+  line-height: 1.4;
   text-transform: uppercase;
   color: var(--header-text-color);
 }
 
 @media screen and (max-width: 900px) {
   .main-banner {
-    background: var(--dark-gray);
+    background: var(--green);
     padding: 0;
-    height: 90px;
+    height: 76px;
     justify-content: space-between;
   }
   .main-banner h1 {
-    display: none;
+    /* display: none; */
+    flex: 1;
+    font-size: 13px;
+    line-height: 21px;
+    color: #fff;
   }
   #logo {
     height: 60px;

@@ -1,0 +1,114 @@
+.region-list {
+}
+
+.region-akkor {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 40px;
+}
+
+.region-body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5px;
+}
+
+.region-region {
+  color: var(--green);
+  width: 150px;
+  flex: none;
+}
+
+.region-name h2 {
+  font-size: 20px;
+}
+
+.region-addr-box {
+  align-self: normal;
+  display: flex;
+  gap: 10px;
+  background-color: var(--light-gray);
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+.region-address {
+  flex: 1;
+  margin-left: 20px;
+}
+
+.region-code {
+  display: flex;
+  align-items: center;
+  background-color: var(--green-transparent);
+  padding: 0 10px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+.region-timezone {
+  align-items: center;
+  display: flex;
+  margin-right: 20px;
+  color: var(--green);
+}
+
+.region-persons {
+  display: flex;
+  gap: 25px;
+  margin-left: 30px;
+}
+
+.region-person {
+}
+
+.rp-post {
+  color: var(--green);
+}
+
+.rp-name {
+}
+
+.rp-fio {
+}
+
+.rp-born {
+  color: var(--light-text-color);
+}
+
+.rp-personal-contacts {
+}
+
+.rp-contacts ul {
+  list-style: none;
+}
+
+@media screen and (max-width: 900px) {
+  .region-akkor {
+    flex-direction: column;
+  }
+
+  .region-name h2 {
+    font-size: 16px;
+  }
+
+  .region-addr-box {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .region-timezone {
+    margin-left: 20px;
+  }
+
+  .region-persons {
+    flex-direction: column;
+  }
+}

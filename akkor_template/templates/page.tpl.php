@@ -149,10 +149,8 @@
          <a href="<?php print $front_page; ?>" id="logo"></a>
       <?php endif; ?>
       <h1>
-         Ассоциация крестьянских<br />
-         (фермерских) хозяйств<br />
-         и сельскохозяйственных<br />
-         кооперативов России
+         Ассоциация крестьянских (фермерских) хозяйств<br />
+         и сельскохозяйственных кооперативов России
       </h1>
       <div class="mbuttons">
          <div class="msearch"></div>
@@ -263,7 +261,7 @@
                $terms = taxonomy_get_tree($vocabulary->vid);
 
                foreach ($terms as $term) { //прогоняем все термины которые есть в ноде
-                  print '<div class="tag">'.$term->name.'</div>';
+                  print '<a href="/taxonomy/term/'.$term->tid.'" class="tag">'.$term->name.'</a>';
                }
             ?>
          </div>
