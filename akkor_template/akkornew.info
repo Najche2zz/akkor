@@ -24,10 +24,13 @@ regions[footer]             = 'Футер'
 
 stylesheets[all][] = css/index.css
 stylesheets[all][] = css/page.css
+stylesheets[all][] = js/slick/slick.css
+stylesheets[all][] = js/slick/slick-theme.css
 
 ; ;;;;;;;;;;;;;;;;;;;;;
 ; ;; Scripts
 ; ;;;;;;;;;;;;;;;;;;;;;
 ; 
 ; scripts[menu] = 'js/mainmenu.js'
-scripts[slider] = 'js/slider.js'
+scripts[slider] = 'js/jquery-3.7.1.slim.min.js'
+scripts[slider] = 'js/slick/slick.min.js'

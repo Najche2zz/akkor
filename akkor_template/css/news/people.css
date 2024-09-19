@@ -18,20 +18,24 @@
 
 .f-img {
   flex: none;
-  width: 120px;
-  height: 120px;
+  /* width: 120px; */
+  /* height: 120px; */
   background-color: var(--img-bg);
   border-radius: 10px;
   overflow: hidden;
+}
+.f-img img {
+  max-width: 100px;
+  height: auto;
 }
 
 .first-title,
 .people-title {
   display: flex;
+  align-items: flex-start;
   flex-direction: column;
   font-size: 22px;
   font-weight: 500;
-  align-items: center;
   gap: 5px;
 }
 
@@ -62,9 +66,17 @@
 
 .people-img {
   flex: none;
-  width: 100px;
-  height: 100px;
+  /* width: 100px; */
+  /* height: 100px; */
   background-color: var(--img-bg);
   border-radius: 10px;
   overflow: hidden;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+.people-img img {
+  max-width: 100px;
+  height: auto;
 }

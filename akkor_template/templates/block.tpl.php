@@ -44,4 +44,122 @@
  * @ingroup themeable
  */
 ?>
-<?php print $content;
+<?php if ($block->module == 'simpleads'): ?>
+
+    <?php if ($block->region == 'right_body'): ?>
+        
+        <div class="events">
+            <div class="rubric"><h4><?php print $block->subject; ?></h4></div>
+            <div class="events-list">
+                <?php print $content; ?>
+            </div>
+        </div>
+        
+    <?php endif; ?>
+
+    <?php if ($block->region == 'left_body'): ?>
+
+        <div class="main-partners">
+            <div class="rubric"><h3><?php print $block->subject; ?></h3></div>
+            <div class="main-partners-list">
+                <div class="main-partner"></div>
+                <div class="main-partner"></div>
+                <div class="main-partner"></div>
+            </div>
+        </div>
+
+    <?php endif; ?>
+
+    <?php if ($block->region == 'bottom'): ?>
+
+        <div class="rubric center"><h3><?php print $block->subject; ?></h3></div>
+         <div class="partners">
+            <div class="partners-wrapper">
+               <?php print $content; ?>
+            </div>
+         </div>
+         <script>
+            jQuery(document).ready(function(){
+                jQuery('.partners-wrapper').slick({
+                    dots: false,
+                    infinite: true,
+                    speed: 300,
+                    slidesToShow: 4,
+                    slidesToScroll: 1,
+                    centerMode: true,
+                    variableWidth: true,
+                    autoplay: true,
+                    autoplaySpeed: 3000,
+                    responsive: [
+                        {
+                            breakpoint: 1024,
+                            settings: {
+                                slidesToShow: 3,
+                            }
+                        },
+                        {
+                            breakpoint: 600,
+                            settings: {
+                                slidesToShow: 2,
+                            }
+                        },
+                        {
+                            breakpoint: 480,
+                            settings: {
+                                slidesToShow: 1,
+                            }
+                        }
+                    ]
+                });
+            });
+         </script>
+
+    <?php endif; ?>
+    
+    <?php if ($block->region == 'ads'): ?>
+
+        <div class="ads-wrapper">
+            <?php print $content; ?>
+        </div>
+        <script>
+            jQuery(document).ready(function(){
+                jQuery('.ads-wrapper').slick({
+                    dots: false,
+                    infinite: true,
+                    variableWidth: true,
+                    centerMode:true,
+                    speed: 300,
+                    slidesToShow: 4,
+                    slidesToScroll: 1,
+                    autoplay: true,
+                    autoplaySpeed: 2000,
+                    responsive: [
+                        {
+                            breakpoint: 1024,
+                            settings: {
+                                slidesToShow: 3,
+                            }
+                        },
+                        {
+                            breakpoint: 600,
+                            settings: {
+                                slidesToShow: 2,
+                            }
+                        },
+                        {
+                            breakpoint: 480,
+                            settings: {
+                                slidesToShow: 1,
+                            }
+                        }
+                    ]
+                });
+            });
+         </script>
+    <?php endif; ?>
+
+<?php else: ?>
+
+    <?php print $content; ?>
+
+<?php endif; ?>

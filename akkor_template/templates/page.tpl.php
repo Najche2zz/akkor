@@ -100,6 +100,8 @@
 
 ?>
 
+<?php include($_SERVER['DOCUMENT_ROOT'].'/sites/all/themes/akkornew/templates/socials.php'); ?>
+
 <?php if (!empty($page['bottom'])): ?>
 <?php endif; ?>
 
@@ -109,7 +111,21 @@
 
       <div class="headbar-right">
          <div class="socials">
-            <?php include($_SERVER['DOCUMENT_ROOT'].'/sites/all/themes/akkornew/templates/socials.tpl.php'); ?>
+            <?php if (!empty($vk_link)): ?>
+               <a href="<?php print $vk_link ?>" target="_blank" class="soc vk"></a>
+            <?php endif; ?>
+            <?php if (!empty($ok_link)): ?>
+               <a href="<?php print $ok_link ?>" target="_blank" class="soc ok"></a>
+            <?php endif; ?>
+            <?php if (!empty($tg_link)): ?>
+               <a href="<?php print $tg_link ?>" target="_blank" class="soc tg"></a>
+            <?php endif; ?>
+            <?php if (!empty($zen_link)): ?>
+               <a href="<?php print $zen_link ?>" target="_blank" class="soc zen"></a>
+            <?php endif; ?>
+            <?php if (!empty($ten_link)): ?>
+               <a href="<?php print $ten_link ?>" target="_blank" class="soc ten"></a>
+            <?php endif; ?>
          </div>
          
          <div class="enter-links">
@@ -133,10 +149,8 @@
          <a href="<?php print $front_page; ?>" id="logo"></a>
       <?php endif; ?>
       <h1>
-         Ассоциация крестьянских<br />
-         (фермерских) хозяйств<br />
-         и сельскохозяйственных<br />
-         кооперативов России
+         Ассоциация крестьянских (фермерских) хозяйств<br />
+         и сельскохозяйственных кооперативов России
       </h1>
       <div class="mbuttons">
          <div class="msearch"></div>
@@ -164,57 +178,17 @@
 
    <?php if (!$is_front): ?>
       <section class="page">
+         <?php if (!empty($breadcrumb)): print $breadcrumb; endif;?>
+
+         <?php if (!empty($tabs)): ?>
+            <?php print render($tabs); ?>
+         <?php endif; ?>
          <?php print render($page['content']); ?>
       </section>
    <?php else: ?>
    
    <section class="left">
       <?php print render($page['left_body']); ?>
-
-      <div class="dsg-news">
-         <div class="rubric"><h3>Движение сельских женщин</h3></div>
-         <div class="dsg-list">
-            <div class="dsg-item">
-               <div class="dsg-img"></div>
-               <div class="dsg-text">
-                  <div class="news-date">25 октября 2024</div>
-                  <h3>
-                     В рамках 11 открытого чемпионата России по пахоте пройдет конференция
-                     АККОР и АО «РОСАГРОЛИЗИНГ»
-                  </h3>
-               </div>
-            </div>
-            <div class="dsg-item">
-               <div class="dsg-img"></div>
-               <div class="dsg-text">
-                  <div class="news-date">25 октября 2024</div>
-                  <h3>
-                     В рамках 11 открытого чемпионата России по пахоте пройдет конференция
-                     АККОР и АО «РОСАГРОЛИЗИНГ»
-                  </h3>
-               </div>
-            </div>
-            <div class="dsg-item">
-               <div class="dsg-img"></div>
-               <div class="dsg-text">
-                  <div class="news-date">25 октября 2024</div>
-                  <h3>
-                     В рамках 11 открытого чемпионата России по пахоте пройдет конференция
-                     АККОР и АО «РОСАГРОЛИЗИНГ»
-                  </h3>
-               </div>
-            </div>
-         </div>
-      </div>
-
-      <div class="main-partners">
-         <div class="rubric"><h3>Главные партнеры</h3></div>
-         <div class="main-partners-list">
-            <div class="main-partner"></div>
-            <div class="main-partner"></div>
-            <div class="main-partner"></div>
-         </div>
-      </div>
    </section>
 
    <section class="right">
@@ -232,18 +206,7 @@
 </section>
 
 <section class="bottom">
-         <div class="rubric center"><h3>Партнеры</h3></div>
-         <div class="partners">
-            <div class="partners-wrapper">
-               <div class="partner"></div>
-               <div class="partner"></div>
-               <div class="partner"></div>
-               <div class="partner"></div>
-               <div class="partner"></div>
-            </div>
-         </div>
-         <script src="./js/slider.js"></script>
-         <script></script>
+   <?php print render($page['bottom']); ?>
 </section>
 
 <footer>
@@ -260,7 +223,21 @@
             </h3>
          </div>
          <div class="socials">
-            <?php include($_SERVER['DOCUMENT_ROOT'].'/sites/all/themes/akkornew/templates/socials.tpl.php'); ?>
+            <?php if (!empty($vk_link)): ?>
+               <a href="<?php print $vk_link ?>" target="_blank" class="soc big vk"></a>
+            <?php endif; ?>
+            <?php if (!empty($ok_link)): ?>
+               <a href="<?php print $ok_link ?>" target="_blank" class="soc big ok"></a>
+            <?php endif; ?>
+            <?php if (!empty($tg_link)): ?>
+               <a href="<?php print $tg_link ?>" target="_blank" class="soc big tg"></a>
+            <?php endif; ?>
+            <?php if (!empty($zen_link)): ?>
+               <a href="<?php print $zen_link ?>" target="_blank" class="soc big zen"></a>
+            <?php endif; ?>
+            <?php if (!empty($ten_link)): ?>
+               <a href="<?php print $ten_link ?>" target="_blank" class="soc big ten"></a>
+            <?php endif; ?>
          </div>
       </section>
       
@@ -279,11 +256,14 @@
       <section class="categories">
          <div class="rubric"><h4>Категории</h4></div>
          <div class="tags dark">
-            <div class="tag">Главное</div>
-            <div class="tag">ДСЖ</div>
-            <div class="tag">Слово фермерам</div>
-            <div class="tag">От первого лица</div>
-            <div class="tag">Мероприятия</div>
+            <?php             
+               $vocabulary = taxonomy_vocabulary_machine_name_load('category');
+               $terms = taxonomy_get_tree($vocabulary->vid);
+
+               foreach ($terms as $term) { //прогоняем все термины которые есть в ноде
+                  print '<a href="/taxonomy/term/'.$term->tid.'" class="tag">'.$term->name.'</a>';
+               }
+            ?>
          </div>
       </section>
    </div>

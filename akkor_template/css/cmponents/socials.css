@@ -9,6 +9,10 @@
   cursor: pointer;
 }
 
+.soc:hover {
+  background-color: var(--green-hover);
+}
+
 .soc.big {
   width: 40px;
   height: 40px;
@@ -44,6 +48,13 @@
   width: 16px;
   height: 16px;
 }
+.soc.ten::before {
+  content: "";
+  background: url(../../../img/ten.svg) no-repeat center;
+  background-size: contain;
+  width: 16px;
+  height: 16px;
+}
 .soc.big.vk::before {
   width: 24px;
   height: 24px;
@@ -58,6 +69,10 @@
   transform: translateX(-2px);
 }
 .soc.big.zen::before {
+  width: 24px;
+  height: 24px;
+}
+.soc.big.ten::before {
   width: 24px;
   height: 24px;
 }

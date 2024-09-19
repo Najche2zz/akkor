@@ -79,117 +79,65 @@
  *
  * @ingroup themeable
  */
+if ($view_mode == 'full'):
+unset($content['links']);
+$persons = !empty($content['group_persona'])
+    ? $content['group_persona']['items']['#items'] : array();
+$region = $content['group_main_info']['field_simple_text_6'];
+$address = $content['group_main_info']['field_text_simple_1'];
+$code = $content['group_main_info']['field_text_simple_4'];
+if (isset($content['group_main_info']['field_text_simple_5']) &&
+  !empty($content['group_main_info']['field_text_simple_5'])) {
+    $timezone = $content['group_main_info']['field_text_simple_5'];
+  }
 ?>
-<!-- Node Output -->
-<?php
-    // print render($content);
-    // print_r($node);
-?>
+<div class="region-akkor">
 
-<?php //print $type;?>
+  <div class="region-region"><?php print render($region); ?></div>
+  
+  <div class="region-body">
+  <div class="region-name">
+    <?php print render($title_prefix); ?>
+    <h2<?php print $title_attributes; ?>><?php print $title; ?></h2>
+    <?php print render($title_suffix); ?>
+  </div>
 
-<?php if ($type == 'article'):?>
-    <div class="tags">
-        <?php
-            $tax = $node->field_categories['und'];
-            
-            $vocabulary = taxonomy_vocabulary_machine_name_load('category');
-            $terms = taxonomy_get_tree($vocabulary->vid);
+  <div class="region-addr-box">
+    <div class="region-address"><?php print render($address); ?></div>
+    
+    <?php if (!empty($timezone)): ?>
+      <div class="region-timezone">МСК <?php print render($timezone); ?></div>
+    <?php endif; ?>
+    
+    
+    <?php if (!empty($code)): ?>
+      <div class="region-code"><?php print render($code); ?></div>
+    <?php endif; ?>
+  </div>
 
-            foreach ($tax as $term) { //прогоняем все термины которые есть в ноде
-                foreach ($terms as $tm) {
-                    if ($tm->tid == $term['tid']) {
-                        print '<div class="tag">'.$tm->name.'</div>';
-                    } 
-                }
-            }
-
-        ?>
-    </div>
-<?php endif; ?>
-
-<?php if ($type != 'commentator'):?>
-    <h1>
-        <?php print $node->title;?>
-    </h1>
-<?php endif; ?>
-
-<?php if ($type == 'article'):?>
-    <div class="tags">
-        <div class="news-date"><?php print format_date($node->created, 'short'); ?></div>
-    </div>
-<?php endif; ?>
-
-<?php if ($type == 'article'):?>
-    <div class="page-content">
-        <?php if (!empty($node->field_image['und'][0]['uri'])): ?>
-            <p>
-                <img src="<?php print image_style_url('large', $node->field_image['und'][0]['uri']); ?>" alt="" class="img-responsive" title="">
-            </p>
+  <div class="region-persons">
+  <?php foreach ($persons as $person): ?>
+    <?php if (!empty($person)): ?>
+    <div class="region-person">
+      <div class="rp-post"><?php print render($person['field_text_simple_2']); ?></div>
+      <div class="rp-name">
+        <?php if (!empty($person['field_text_simple_3'])): ?>
+          <div class="rp-fio"><?php print render($person['field_text_simple_3']); ?></div>
         <?php endif; ?>
-        <?php print $node->body['und'][0]['value']; ?>
+        <?php if (!empty($person['field_date_1']['#markup']['#is_empty'])): ?>
+          <div class="rp-born"><?php print date('d.m.Y', strtotime($person['field_date_1']['#markup'])); ?> г.р.</div>
+        <?php endif; ?>
+        <?php if (!empty($person['field_text_full_1'])): ?>
+          <div class="rp-personal-contacts"><?php print render($person['field_text_full_1']); ?></div>
+        <?php endif; ?>
+      </div>
+      <div class="rp-contacts">
+        <?php print render($person['field_text_full_2']); ?>
+      </div>
     </div>
+    <?php endif; ?>
+  <?php endforeach; ?>
+  </div>
+  </div>
+</div>
 <?php endif; ?>
-
-<?php if ($type == 'page'):?>
-    <div class="page-content">
-        <?php print render($content); ?>
-    </div>
-<?php endif; ?>
-
-<?php if ($type == 'commentator'):?>
-    <div class="page-content">
-        <div class="commentator">
-            <?php 
-            $options = array(
-                'type' => 'image',
-                'settings' => array(
-                    'image_style' => 'medium',
-                    'image_link' => 'content', // content, file
-                )
-            );
-            $images = field_get_items('node', $node, 'field_image');
-            $img = field_view_value('node', $node, 'field_image', $images[0], $options);
-            ?>
-            <div class="com-img">
-                <?php print render($img);?>
-            </div>
-            <div class="com-body">
-                <div class="com-title">
-                    <h1><?php print $node->title;?></h1>
-                    <h2><?php print $node->field_status['und'][0]['value']; ?></h2>
-                </div>
-                <?php print $node->body['und'][0]['value']; ?>
-            </div>
-        </div>
-    </div>
-<?php endif; ?>
-
-<?php if ($type == 'commentary'):?>
-    <div class="page-content">
-        <div class="commentator">
-            <?php 
-            $options = array(
-                'type' => 'image',
-                'settings' => array(
-                    'image_style' => 'medium',
-                    'image_link' => 'content', // content, file
-                )
-            );
-            $images = field_get_items('node', $node, 'field_image');
-            $img = field_view_value('node', $node, 'field_image', $images[0], $options);
-            ?>
-            <div class="com-img">
-                <?php print render($img);?>
-            </div>
-            <div class="com-body">
-                <?php print $node->body['und'][0]['value']; ?>
-            </div>
-        </div>
-    </div>
-<?php endif; ?>
-
-<?php if ($type == 'media_gallery'):?>
-    <?php print render($content); ?>
-<?php endif; ?>
-<!-- End Node output -->

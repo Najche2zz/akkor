@@ -38,6 +38,7 @@
     'ads_height' => check_plain($ads_height),
   );
 
+  // print_r($user);
 ?>
 <?php if (count($ads) > 0) : ?>
   
@@ -46,13 +47,7 @@
   */
   ?>
 
-<div class="events">
-  <div class="rubric"><h4>Материалы мероприятий</h4></div>
-  <div class="events-list">
-    <a href="#" class="event" style="height: 150px"></a>
-    <a href="#" class="event" style="height: 200px"></a>
-    <a href="#" class="event" style="height: 250px"></a>
-    
+
     <?php // Code below displays ad, but if Drupal cache enabled, the ad remains the same until the cache not cleared or not expired. ?>
     <?php if (count($ads) > 0) : ?>
       <?php foreach ($ads as $ad) : ?>
@@ -65,7 +60,5 @@
         <?php endif; ?>
       <?php endforeach; ?>
     <?php endif; ?>
-              
-  </div>
-</div>
+
 <?php endif; ?>

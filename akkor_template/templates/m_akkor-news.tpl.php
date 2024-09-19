@@ -18,7 +18,7 @@
                     </a>
                 </h2>
                 <div class="first-intro">
-                    <?php print akkor_truncate(strip_tags($node->body['und'][0]['safe_value']), 300); ?>
+                    <?php print akkornew_truncate(strip_tags($node->body['und'][0]['safe_value']), 300); ?>
                 </div>
             </div>
         </div>
@@ -31,15 +31,14 @@
 
             <div class="main-item">
                 <div class="main-img">
-                    <a href="<?php print drupal_get_path_alias('node/' . $node->nid); ?>" style="background-image: url(<?php print image_style_url('thumbnail', $node->field_image['und'][0]['uri']); ?>);">
-                        <!-- <img src="<?php print image_style_url('thumbnail', $node->field_image['und'][0]['uri']); ?>" alt="" class="img-responsive" title="<?php print $node->title;?>"> -->
+                    <a href="<?php print drupal_get_path_alias('node/' . $node->nid); ?>" style="background-image: url(<?php print image_style_url('medium', $node->field_image['und'][0]['uri']); ?>);">
                     </a>
                 </div>
                 <div class="main-text">
                     <div class="news-date"><?php print format_date($node->created, 'short'); ?></div>
                     <h3>
                         <a href="<?php print drupal_get_path_alias('node/' . $node->nid); ?>">
-                            <?php print akkor_truncate(strip_tags($node->title), 60);?>
+                            <?php print akkornew_truncate(strip_tags($node->title), 60);?>
                         </a>
                     </h3>
                 </div>
@@ -48,28 +47,5 @@
         <?php endforeach; ?>
 
         </div>
-    </div>
-</div>
-
-<div class="news">
-    <div class="rubric"><h3>Новости</h3></div>
-    <div class="list">
-
-    <?php $i = 0; foreach ($nodes as $node): $i++; if ($i < 5) { continue; } ?>
-
-        <div class="item">
-            <div class="news-date"><?php print format_date($node->created, 'short'); ?></div>
-            <h3>
-                <a href="<?php print drupal_get_path_alias('node/' . $node->nid); ?>">
-                    <?php print $node->title;?>
-                </a>
-            </h3>
-            <div class="intro">
-                <?php print akkor_truncate(strip_tags($node->body['und'][0]['safe_value']), 300); ?>
-            </div>
-        </div>
-
-    <?php endforeach; ?>
-
     </div>
 </div>

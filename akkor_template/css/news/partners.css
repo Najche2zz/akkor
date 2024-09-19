@@ -1,50 +1,99 @@
 .main-partners {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 
 .main-partners-list {
-    display: flex;
-    gap: 30px;
+  display: flex;
+  gap: 30px;
 }
 
 .main-partner {
-    flex:1;
-    height: 175px;
-    border-radius: 10px;
-    background-color: var(--img-bg);
-    transition: all ease-out 300ms;
+  flex: 1;
+  height: 175px;
+  border-radius: 10px;
+  background-color: var(--img-bg);
+  transition: all ease-out 300ms;
 }
 .main-partner:hover {
-    background-color: var(--img-bg-hover);
+  background-color: var(--img-bg-hover);
 }
 
 .partners {
-    position: relative;
-    overflow: hidden;
+  position: relative;
+  overflow: hidden;
 }
 
 .partners-wrapper {
-    display: inline-block;
-    position: relative;
-    overflow: hidden;
-    margin: auto;
-    left: 50%;
-    transform: translateX(-50%);
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  margin: auto;
+  left: 50%;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
 }
 
+.partners-wrapper .event,
 .partner {
-    float: left;
-    background-color: var(--img-bg);
-    width: 100px;
-    height: 100px;
-    transition: all ease-out 300ms;
-    margin: 20px;
-    border-radius: 5px;
+  float: left;
+  background-color: var(--img-bg);
+  width: auto;
+  transition: all ease-out 300ms;
+  margin: 20px;
+  border-radius: 5px;
+}
+.partners-wrapper::before {
+  position: absolute;
+  content: "";
+  display: block;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 150px;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 1),
+    rgba(255, 255, 255, 0)
+  );
+  z-index: 1;
+}
+.partners-wrapper::after {
+  position: absolute;
+  content: "";
+  display: block;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 150px;
+  background: linear-gradient(
+    -90deg,
+    rgba(255, 255, 255, 1),
+    rgba(255, 255, 255, 0)
+  );
+  z-index: 1;
 }
 
+.partners-wrapper .event img,
+.partner img {
+  height: 120px;
+  width: auto;
+  transition: all ease-out 300ms;
+  -webkit-transition: all ease-out 300ms;
+  -moz-transition: all ease-out 300ms;
+  -ms-transition: all ease-out 300ms;
+  -o-transition: all ease-out 300ms;
+}
+
+.partners-wrapper .event:hover img,
 .partner:hover {
-    background-color: var(--img-bg-hover);
-    height: 100px;
+  background-color: var(--img-bg-hover);
+}
+
+.partner:hover img {
+  opacity: 0.7;
 }

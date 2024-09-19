@@ -1,6 +1,6 @@
 .mainmenu {
   display: flex;
-  background: var(--dark-gray);
+  background: var(--green);
   border-radius: 10px;
   justify-content: space-between;
 }
@@ -37,21 +37,20 @@ ul.menu li {
   -o-transition: all ease-out 300ms;
 }
 
-ul.menu li.active {
-  background: var(--green);
-}
-
-ul.menu li:hover {
-  background: var(--menu-hover);
+ul.menu li.active,
+.menu a.active {
+  background: var(--green-light);
 }
 
 ul.menu li a,
 ul.menu li span {
   display: block;
-  padding: 20px;
+  border-radius: 10px;
+  padding: 10px 20px;
   color: #fff;
   text-decoration: none;
   cursor: pointer;
+  font-size: 14px;
 }
 
 .submenu {
@@ -59,9 +58,13 @@ ul.menu li span {
   position: absolute;
   top: 100%;
   left: 0;
-  background: var(--dark-gray);
+  background: var(--green);
   border-radius: 10px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
 }
 .submenu.show {
   display: block;
@@ -94,6 +97,8 @@ ul.menu li span {
 }
 
 .search {
+  /* position: absolute; */
+  height: 100%;
   display: flex;
   align-items: center;
   border-left: 1px solid var(--menu-hover);
@@ -101,7 +106,15 @@ ul.menu li span {
   gap: 15px;
 }
 
-.search input[type="text"] {
+#search-block-form {
+  display: flex;
+}
+.form-item-search-block-form {
+  margin: 0;
+}
+
+.search input[type="text"],
+.form-search {
   border: none;
   color: rgba(255, 255, 255, 0.3);
   background: transparent;
@@ -110,7 +123,8 @@ ul.menu li span {
   transition: all ease-out 300ms;
 }
 
-.search input[type="text"]:focus-visible {
+.search input[type="text"]:focus-visible,
+.form-search:focus-visible {
   background-color: var(--menu-hover);
   color: #000;
   border: none !important;
@@ -131,18 +145,26 @@ ul.menu li span {
   background-color: var(--menu-hover);
 }
 
+@media (hover: hover) {
+  ul.menu li:hover {
+    background: var(--menu-hover);
+  }
+}
+
+@media (hover: none) {
+}
+
 @media screen and (max-width: 1200px) {
   .mainmenu {
     position: relative;
-    overflow: hidden;
+    /* overflow: hidden; */
   }
 
   .search {
-    position: absolute;
     right: 0;
     top: 0;
     height: 100%;
-    background: var(--dark-gray);
+    /* background: var(--dark-gray); */
     border-radius: 0 10px 10px 0;
     gap: 5px;
   }
@@ -165,6 +187,7 @@ ul.menu li span {
   }
 
   .mainmenu {
+    overflow-y: scroll;
     position: fixed;
     justify-content: flex-start;
     flex-direction: column;
@@ -189,33 +212,70 @@ ul.menu li span {
   }
   ul.menu {
     flex-direction: column;
-    gap: 25px;
+    gap: 16px;
   }
 
   ul.menu li {
-    padding: 5px 20px;
     border-radius: 10px;
     font-weight: 300;
     transition: all ease-out 300ms;
   }
 
   ul.menu li.active {
+    background: transparent;
+    border-bottom: 2px solid var(--green);
+  }
+  .submenu ul.menu li.active {
     background: var(--green);
   }
 
   ul.menu li.active a {
-    color: var(--bg-color) !important;
+    color: var(--text-color) !important;
   }
 
   ul.menu li:hover {
     background: var(--menu-hover);
   }
 
-  ul.menu li a {
-    color: var(--dark-gray);
+  ul.menu li a,
+  ul.menu li span {
+    padding: 5px 20px;
     text-decoration: none;
+    color: var(--dark-gray);
   }
+
+  .submenu {
+    position: relative;
+    top: auto;
+    left: auto;
+    border-radius: 10px;
+    box-shadow: none;
+    background: none;
+    padding-bottom: 16px;
+  }
+
+  .submenu ul.menu li {
+    text-wrap: nowrap;
+    margin: 0;
+    border-radius: 10px;
+  }
+
+  .submenu ul.menu li a {
+    display: block;
+    padding: 5px 20px;
+    width: auto;
+    color: var(--text-color) !important;
+  }
+
+  ul.menu li.active a {
+  }
+
+  .submenu.show {
+    background: rgba(0, 0, 0, 0.1);
+  }
+
   .search {
+    height: 100%;
     height: auto;
     position: relative;
     background: transparent;
