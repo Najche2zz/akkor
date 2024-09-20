@@ -8,6 +8,7 @@
 }
 
 .region-body {
+  flex:1;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -25,8 +26,10 @@
 }
 
 .region-addr-box {
+  min-height: 45px;
   align-self: normal;
   display: flex;
+  align-items: center;
   gap: 10px;
   background-color: var(--light-gray);
   border-radius: 5px;
@@ -40,10 +43,16 @@
   flex: 1;
   margin-left: 20px;
 }
+.region-address .field {
+  display: flex;
+}
 
 .region-code {
   display: flex;
+  align-self: normal;
+  width: 110px;
   align-items: center;
+  justify-content: center;
   background-color: var(--green-transparent);
   padding: 0 10px;
   border-radius: 5px;
@@ -110,5 +119,8 @@
 
   .region-persons {
     flex-direction: column;
+  }
+  .region-code {
+    width: auto;
   }
 }

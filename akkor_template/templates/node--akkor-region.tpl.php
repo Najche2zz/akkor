@@ -102,6 +102,7 @@ if (isset($content['group_main_info']['field_text_simple_5']) &&
     <?php print render($title_suffix); ?>
   </div>
 
+  <?php if (!empty($timezone) || !empty($address) || !empty($code)): ?>
   <div class="region-addr-box">
     <div class="region-address"><?php print render($address); ?></div>
     
@@ -110,10 +111,11 @@ if (isset($content['group_main_info']['field_text_simple_5']) &&
     <?php endif; ?>
     
     
-    <?php if (!empty($code)): ?>
+    <?php //if (!empty($code)): ?>
       <div class="region-code"><?php print render($code); ?></div>
-    <?php endif; ?>
+    <?php //endif; ?>
   </div>
+  <?php endif; ?>
 
   <div class="region-persons">
   <?php foreach ($persons as $person): ?>

@@ -111,6 +111,7 @@ dd {
   header {
     width: auto;
     padding: 0 20px;
+    top:15px;
   }
 
   main {
@@ -152,7 +153,7 @@ dd {
 @media screen and (max-width: 900px) {
   main {
     flex-direction: column;
-    margin-top: 120px;
+    margin-top: 100px;
   }
   header {
     padding: 0;

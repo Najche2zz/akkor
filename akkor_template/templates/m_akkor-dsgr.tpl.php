@@ -7,7 +7,7 @@
         $img = image_style_url('medium', $node->field_image['und'][0]['uri']);
     ?>
         <div class="dsg-item">
-            <?php if ($img) : ?>
+            <?php if (!empty($img)) : ?>
                 <div class="dsg-img">
                     <a href="<?php print drupal_get_path_alias('node/' . $node->nid); ?>">
                         <img src="<?php print $img; ?>" alt="<?php print $node->title; ?>" />

@@ -27,7 +27,7 @@
 
         <div class="main-list">
 
-        <?php $i = 0; foreach ($nodes as $node): $i++; if ($i > 4) { break; } ?>
+        <?php $i = 0; foreach ($nodes as $node): $i++; if ($i == 1) { continue; } if ($i > 5) { break; } ?>
 
             <div class="main-item">
                 <div class="main-img">

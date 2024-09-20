@@ -40,3 +40,21 @@
     height: 60px;
   }
 }
+
+@media screen and (max-width: 550px) {
+  .main-banner {
+    gap: 0;
+  }
+
+  .main-banner h1 {
+    font-size: 11px;
+    line-height: 14px;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  #logo {
+    height: 40px;
+    width: 90px;
+  }
+}

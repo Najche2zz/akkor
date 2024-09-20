@@ -2,7 +2,7 @@
     <div class="rubric"><h3>Новости</h3></div>
     <div class="list">
 
-    <?php $i = 0; foreach ($nodes as $node): $i++; if ($i < 5) { continue; } ?>
+    <?php $i = 0; foreach ($nodes as $node): $i++; if ($i > 5) { continue; } ?>
 
         <div class="item">
             <div class="news-date"><?php print format_date($node->created, 'short'); ?></div>
